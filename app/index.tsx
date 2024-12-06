@@ -29,14 +29,17 @@ import { StatusBar } from "expo-status-bar";
 
 export default function Home() {
   const [modalVisible, setModalVisible] = React.useState(false);
-  const [selectedMovie, setSelectedMovie] = React.useState(null);
+  const [selectedMovie, setSelectedMovie] = React.useState({
+    id: 0,
+    title: "text",
+    image: "../assets/app-images/2.png",
+  });
 
   const heroMovies = [
     {
       id: 1,
       title: "Stranger Things",
-      image:
-        "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: require("../assets/app-images/strangerthings.jpg"),
     },
   ];
 
@@ -47,50 +50,42 @@ export default function Home() {
         {
           id: 1,
           title: "Bridgerton",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/1.png"),
         },
         {
           id: 2,
           title: "Money Heist",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/2.png"),
         },
         {
           id: 3,
           title: "Black Mirror",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/3.png"),
         },
         {
           id: 4,
           title: "Black Mirror",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/4.png"),
         },
         {
           id: 5,
           title: "Black Mirror",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/5.png"),
         },
         {
           id: 6,
           title: "Black Mirror",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/6.png"),
         },
         {
           id: 7,
           title: "Black Mirror",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/7.png"),
         },
         {
           id: 8,
           title: "Black Mirror",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/3.png"),
         },
       ],
     },
@@ -100,32 +95,27 @@ export default function Home() {
         {
           id: 4,
           title: "Wednesday",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/5.png"),
         },
         {
           id: 5,
           title: "You",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/1.png"),
         },
         {
           id: 6,
           title: "Squid Game",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/2.png"),
         },
         {
           id: 7,
           title: "Squid Game",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/4.png"),
         },
         {
           id: 8,
           title: "Squid Game",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/6.png"),
         },
       ],
     },
@@ -135,32 +125,27 @@ export default function Home() {
         {
           id: 4,
           title: "Wednesday",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/3.png"),
         },
         {
           id: 5,
           title: "You",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/7.png"),
         },
         {
           id: 6,
           title: "Squid Game",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/1.png"),
         },
         {
           id: 7,
           title: "Squid Game",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/5.png"),
         },
         {
           id: 8,
           title: "Squid Game",
-          image:
-            "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          image: require("../assets/app-images/2.png"),
         },
       ],
     },
@@ -186,7 +171,6 @@ export default function Home() {
     <SafeAreaView className="flex-1 bg-black ">
       <StatusBar hidden />
       <Box className="flex-1 flex justify-center items-center">
-        {/* Animated Header */}
         <HStack className="px-2 py-2 w-full justify-between items-center">
           <Text className="text-red-600 text-5xl font-bold leading-tight">
             N
@@ -218,14 +202,13 @@ export default function Home() {
             />
           </Button>
         </HStack>
-
         <ScrollView>
-          <Box className="border border-outline-700 rounded-xl">
+          <Box className="border border-outline-700 rounded-xl mb-4">
             <VStack className="p-1  rounded-lg">
               {heroMovies.map((movie, index) => (
                 <Box key={movie.id}>
                   <Image
-                    source={{ uri: movie.image }}
+                    source={movie.image}
                     alt={movie.title}
                     className="w-full h-[500px]"
                     // resizeMode="cover"
@@ -251,17 +234,6 @@ export default function Home() {
               ))}
             </VStack>
           </Box>
-          {/* Hero Indicator */}
-          <HStack className="justify-center gap-2 mb-4 ">
-            {heroMovies.map((_, index) => (
-              <Box
-                key={index}
-                className={`w-2 h-2 rounded-full ${
-                  index === heroIndex ? "bg-white" : "bg-gray-500"
-                }`}
-              />
-            ))}
-          </HStack>
           {/* Categories with Animations */}
           {categories.map((category, categoryIndex) => (
             <Box key={category.name} className="mb-4">
@@ -274,7 +246,7 @@ export default function Home() {
                     <Box key={movie.id} className="rounded-lg">
                       <Pressable onPress={() => handleMovieSelect(movie)}>
                         <Image
-                          source={{ uri: movie.image }}
+                          source={movie.image}
                           alt={movie.title}
                           className="w-[100px] h-[200px] "
                         />
@@ -288,21 +260,21 @@ export default function Home() {
         </ScrollView>
 
         {/* Animated Modal */}
-        <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)} >
+        <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
           <ModalBackdrop />
           <ModalContent className="w-11/12 bg-black border-[0px]">
             <ModalHeader>
               <Text className="flex-1 text-gray-100">
                 {selectedMovie?.title}
               </Text>
-              <ModalCloseButton onPress={() => setModalVisible(false)}>
-                {/* <X color="black" /> */}
-              </ModalCloseButton>
+              <ModalCloseButton
+                onPress={() => setModalVisible(false)}
+              ></ModalCloseButton>
             </ModalHeader>
             <ModalBody>
               <Box>
                 <Image
-                  source={{ uri: selectedMovie?.image }}
+                  source={selectedMovie?.image}
                   alt={selectedMovie?.title}
                   className="w-full h-[400px] rounded-lg mb-4"
                 />
