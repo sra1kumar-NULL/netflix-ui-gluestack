@@ -182,22 +182,22 @@ export default function Home() {
         </HStack>
         <HStack className="gap-2 w-full justify-start pb-4">
           <Button variant="outline" className="rounded-full" size="sm">
-            <ButtonText className="text-primary-50 font-light">
+            <ButtonText className="text-typography-100 font-light">
               TV Shows
             </ButtonText>
           </Button>
           <Button variant="outline" className="rounded-full" size="sm">
-            <ButtonText className="text-primary-50 font-light">
+            <ButtonText className="text-typography-100 font-light">
               Movies
             </ButtonText>
           </Button>
           <Button variant="outline" className="rounded-full" size="sm">
-            <ButtonText className="text-primary-50 font-light">
+            <ButtonText className="text-typography-100 font-light">
               Categories
             </ButtonText>
             <ButtonIcon
               as={ChevronDownIcon}
-              className="text-primary-50"
+              className="text-typography-100"
               size="md"
             />
           </Button>
