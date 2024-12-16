@@ -32,7 +32,7 @@ export default function Home() {
   const [selectedMovie, setSelectedMovie] = React.useState({
     id: 0,
     title: "text",
-    image: "../assets/app-images/2.png",
+    image: require("../assets/app-images/2.png"),
   });
 
   const heroMovies = [
@@ -205,33 +205,36 @@ export default function Home() {
         <ScrollView>
           <Box className="border border-outline-700 rounded-xl mb-4">
             <VStack className="p-1  rounded-lg">
-              {heroMovies.map((movie, index) => (
-                <Box key={movie.id}>
-                  <Image
-                    source={movie.image}
-                    alt={movie.title}
-                    className="w-full h-[500px]"
-                    // resizeMode="cover"
-                  />
-                  <VStack className="bg-black p-4">
-                    <Text className="text-white text-2xl font-bold">
-                      {movie.title}
-                    </Text>
-                    <HStack className="mt-2 justify-between items-center gap-3">
-                      <Box className="flex-1">
-                        <Button className="bg-white ">
-                          <Text className="text-black">Play</Text>
-                        </Button>
-                      </Box>
-                      <Box className="flex-1">
-                        <Button variant="outline">
-                          <Text className="text-white">More Info</Text>
-                        </Button>
-                      </Box>
-                    </HStack>
-                  </VStack>
-                </Box>
-              ))}
+              {heroMovies.map((movie, index) => {
+                const imageSrc = movie.image;
+                return (
+                  <Box key={movie.id}>
+                    <Image
+                      source={imageSrc}
+                      alt={movie.title}
+                      className="w-full h-[500px]"
+                      // resizeMode="cover"
+                    />
+                    <VStack className="bg-black p-4">
+                      <Text className="text-white text-2xl font-bold">
+                        {movie.title}
+                      </Text>
+                      <HStack className="mt-2 justify-between items-center gap-3">
+                        <Box className="flex-1">
+                          <Button className="bg-white ">
+                            <Text className="text-black">Play</Text>
+                          </Button>
+                        </Box>
+                        <Box className="flex-1">
+                          <Button variant="outline">
+                            <Text className="text-white">More Info</Text>
+                          </Button>
+                        </Box>
+                      </HStack>
+                    </VStack>
+                  </Box>
+                );
+              })}
             </VStack>
           </Box>
           {/* Categories with Animations */}
@@ -242,17 +245,20 @@ export default function Home() {
               </Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <HStack className="gap-2 px-4">
-                  {category.movies.map((movie, movieIndex) => (
-                    <Box key={movie.id} className="rounded-lg">
-                      <Pressable onPress={() => handleMovieSelect(movie)}>
-                        <Image
-                          source={movie.image}
-                          alt={movie.title}
-                          className="w-[100px] h-[200px] "
-                        />
-                      </Pressable>
-                    </Box>
-                  ))}
+                  {category.movies.map((movie, movieIndex) => {
+                    const imageSrc = movie.image;
+                    return (
+                      <Box key={movie.id} className="rounded-lg">
+                        <Pressable onPress={() => handleMovieSelect(movie)}>
+                          <Image
+                            source={imageSrc}
+                            alt={movie.title}
+                            className="w-[100px] h-[200px] "
+                          />
+                        </Pressable>
+                      </Box>
+                    );
+                  })}
                 </HStack>
               </ScrollView>
             </Box>
