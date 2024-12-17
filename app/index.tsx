@@ -182,7 +182,7 @@ export default function Home() {
         </HStack>
         <HStack className="gap-2 w-full justify-start pb-4">
           <Button variant="outline" className="rounded-full" size="sm">
-            <ButtonText className="text-typography-100 font-light">
+            <ButtonText className="text-typography-100 font-light ">
               TV Shows
             </ButtonText>
           </Button>
